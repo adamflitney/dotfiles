@@ -10,7 +10,15 @@ return {
     debug = false,
     opacity = nil, -- 0-100 opacity level
     resizing_mappings = false,
-    post_open_hook = nil,
+    post_open_hook = function(buf, win)
+      -- Add escape key mapping in the preview window
+      vim.keymap.set("n", "<Esc>", function()
+        require("goto-preview").close_all_win()
+      end, { buffer = buf, noremap = true, silent = true })
+      vim.keymap.set("n", "q", function()
+        require("goto-preview").close_all_win()
+      end, { buffer = buf, noremap = true, silent = true })
+    end,
     post_close_hook = nil,
     references = {
       telescope = require("telescope.themes").get_dropdown({ hide_preview = false }),

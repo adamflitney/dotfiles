@@ -8,8 +8,8 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      "nvim-neotest/neotest-vitest",
-      "nvim-neotest/neotest-jest",
+      { "nvim-neotest/neotest-vitest", url = "https://github.com/nvim-neotest/neotest-vitest.git" },
+      { "nvim-neotest/neotest-jest", url = "https://github.com/nvim-neotest/neotest-jest.git" },
     },
     opts = {
       adapters = {
