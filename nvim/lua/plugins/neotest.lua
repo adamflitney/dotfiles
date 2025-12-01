@@ -1,6 +1,13 @@
 -- Neotest configuration for running tests
 -- Supports Vitest (primary) and Jest (occasional)
 return {
+  -- Install adapters as separate plugins first
+  {
+    "marilari88/neotest-vitest",
+  },
+  {
+    "nvim-neotest/neotest-jest",
+  },
   {
     "nvim-neotest/neotest",
     dependencies = {
@@ -8,8 +15,8 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
-      { "nvim-neotest/neotest-vitest", url = "https://github.com/nvim-neotest/neotest-vitest.git" },
-      { "nvim-neotest/neotest-jest", url = "https://github.com/nvim-neotest/neotest-jest.git" },
+      "marilari88/neotest-vitest",
+      "nvim-neotest/neotest-jest",
     },
     opts = {
       adapters = {
@@ -64,12 +71,22 @@ return {
       },
     },
     config = function(_, opts)
-      -- Load adapters
-      opts.adapters = {
-        require("neotest-vitest")(opts.adapters["neotest-vitest"] or {}),
-        require("neotest-jest")(opts.adapters["neotest-jest"] or {}),
-      }
-
+      -- Load adapters with proper error handling
+      local adapters = {}
+      
+      -- Try to load vitest adapter
+      local ok_vitest, vitest = pcall(require, "neotest-vitest")
+      if ok_vitest then
+        table.insert(adapters, vitest(opts.adapters["neotest-vitest"] or {}))
+      end
+      
+      -- Try to load jest adapter
+      local ok_jest, jest = pcall(require, "neotest-jest")
+      if ok_jest then
+        table.insert(adapters, jest(opts.adapters["neotest-jest"] or {}))
+      end
+      
+      opts.adapters = adapters
       require("neotest").setup(opts)
     end,
     keys = {
