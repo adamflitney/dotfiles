@@ -24,9 +24,15 @@ ln -sf ~/dotfiles/nvim ~/.config/nvim
 ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
 
+### LeaderKey
+```bash
+ln -sf ~/dotfiles/leaderkey/config.json ~/Library/Application\ Support/Leader\ Key/config.json
+```
+
 ## Configs
 
 - **Karabiner**: Maps shift+space to F12 (leader key), Caps Lock to Ctrl/Esc
 - **Kanata**: Arrow keys on grave hold, Esc/Ctrl on Caps Lock tap/hold
 - **Neovim**: LazyVim configuration
 - **Tmux**: Terminal multiplexer configuration
+- **LeaderKey**: F12 leader key shortcuts for app launching (t=Ghostty, b=browsers, r=Raycast, n=Obsidian)
