@@ -14,7 +14,19 @@ ln -sf ~/dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ln -sf ~/dotfiles/kanata/config.kbd ~/kanata-tray-0.8.0/config/kanata_config/config.kbd
 ```
 
+### Neovim
+```bash
+ln -sf ~/dotfiles/nvim ~/.config/nvim
+```
+
+### Tmux
+```bash
+ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+```
+
 ## Configs
 
 - **Karabiner**: Maps shift+space to F12 (leader key), Caps Lock to Ctrl/Esc
 - **Kanata**: Arrow keys on grave hold, Esc/Ctrl on Caps Lock tap/hold
+- **Neovim**: LazyVim configuration
+- **Tmux**: Terminal multiplexer configuration
