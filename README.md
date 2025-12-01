@@ -9,11 +9,6 @@ My configuration files for macOS.
 ln -sf ~/dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ```
 
-### Kanata
-```bash
-ln -sf ~/dotfiles/kanata/config.kbd ~/kanata-tray-0.8.0/config/kanata_config/config.kbd
-```
-
 ### Neovim
 ```bash
 ln -sf ~/dotfiles/nvim ~/.config/nvim
@@ -31,8 +26,7 @@ ln -sf ~/dotfiles/leaderkey/config.json ~/Library/Application\ Support/Leader\ K
 
 ## Configs
 
-- **Karabiner**: Maps shift+space to F12 (leader key), Caps Lock to Ctrl/Esc
-- **Kanata**: Arrow keys on grave hold, Esc/Ctrl on Caps Lock tap/hold
+- **Karabiner-Elements**: Maps shift+space to F12 (leader key), Caps Lock to Ctrl/Esc
 - **Neovim**: LazyVim configuration
 - **Tmux**: Terminal multiplexer configuration
 - **LeaderKey**: F12 leader key shortcuts for app launching (t=Ghostty, b=browsers, r=Raycast, n=Obsidian)
