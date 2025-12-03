@@ -5,21 +5,25 @@ My configuration files for macOS.
 ## Setup
 
 ### Karabiner-Elements
+
 ```bash
 ln -sf ~/dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 ```
 
 ### Neovim
+
 ```bash
 ln -sf ~/dotfiles/nvim ~/.config/nvim
 ```
 
 ### Tmux
+
 ```bash
 ln -sf ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
 
 ### LeaderKey
+
 ```bash
 ln -sf ~/dotfiles/leaderkey/config.json ~/Library/Application\ Support/Leader\ Key/config.json
 ```
