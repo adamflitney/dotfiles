@@ -37,15 +37,40 @@
           "key" : "c",
           "type" : "url",
           "value" : "raycast://extensions/raycast/system/open-camera"
+        },
+        {
+          "key" : "r",
+          "type" : "application",
+          "value" : "/Applications/Raycast.app"
         }
       ],
       "key" : "r",
       "type" : "group"
     },
     {
-      "key" : "n",
+      "key" : "o",
       "type" : "application",
       "value" : "/Applications/Obsidian.app"
+    },
+    {
+      "key" : "c",
+      "type" : "application",
+      "value" : "/Applications/Visual Studio Code.app"
+    },
+    {
+      "key" : "n",
+      "type" : "application",
+      "value" : "/Applications/Notion.app"
+    },
+    {
+      "key" : "s",
+      "type" : "application",
+      "value" : "/Applications/Slack.app"
+    },
+    {
+      "key" : "m",
+      "type" : "application",
+      "value" : "/System/Applications/Messages.app"
     }
   ],
   "type" : "group"
