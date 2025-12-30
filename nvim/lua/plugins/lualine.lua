@@ -15,6 +15,19 @@ return {
           return ok
         end,
       })
+
+      -- Add copilot statusline component
+      table.insert(opts.sections.lualine_z, {
+        function()
+          local icon = " "
+          local status = require("copilot.api").status.data
+          return icon .. (status.status or "")
+        end,
+        cond = function()
+          local ok, clients = pcall(vim.lsp.get_clients, { name = "copilot", bufnr = 0 })
+          return ok and #clients > 0
+        end,
+      })
     end,
   },
 }

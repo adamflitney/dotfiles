@@ -289,6 +289,21 @@
                     "modifiers": ["command"]
                   }
                 ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["shift", "control"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "p",
+                    "modifiers": ["command"]
+                  }
+                ]
               }
             ]
           }
