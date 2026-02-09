@@ -1,4 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "instructions": []
+  "instructions": [],
+  "plugin": ["@tarquinen/opencode-dcp@latest"],
+  "mcp": {
+    "coto": {
+      "type": "local",
+      "command": ["coto-mcp"]
+    }
+  }
 }
