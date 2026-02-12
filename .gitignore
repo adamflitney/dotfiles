@@ -12,8 +12,11 @@ credentials*
 *.swp
 *.swo
 
-# Local overrides (machine-specific configs)
+# Local overrides (machine-specific config files)
+# Use .local extension for machine-specific overrides, e.g., config.local
 *.local
+!.local/
+!**/.local/
 
 # Logs
 *.log

@@ -1,0 +1,49 @@
+#!/bin/bash
+# dotfiles-sync - Auto-commit and push dotfiles changes
+# Runs via LaunchAgent hourly
+
+DOTFILES_DIR="$HOME/dotfiles"
+LOG_DIR="$HOME/.local/share"
+LOG_FILE="$LOG_DIR/dotfiles-sync.log"
+
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+
+# Set up PATH to include Homebrew (needed for gh CLI in LaunchAgent context)
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
+# Configure git to use gh CLI for authentication (works in non-interactive contexts)
+export GH_TOKEN=$(gh auth token 2>/dev/null)
+
+log() {
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
+}
+
+cd "$DOTFILES_DIR" || { log "ERROR: Cannot cd to $DOTFILES_DIR"; exit 1; }
+
+# Check if there are any changes
+if [[ -z $(git status --porcelain) ]]; then
+  log "No changes detected"
+  exit 0
+fi
+
+# Get list of changed files for commit message
+changed_files=$(git status --porcelain | awk '{print $2}' | head -5 | tr '\n' ', ' | sed 's/,$//')
+file_count=$(git status --porcelain | wc -l | tr -d ' ')
+
+if [[ $file_count -gt 5 ]]; then
+  changed_files="${changed_files}, ... (+$((file_count - 5)) more)"
+fi
+
+log "Changes detected: $changed_files"
+
+# Commit and push
+git add -A
+git commit -m "Auto-sync: ${changed_files}"
+
+if git push 2>> "$LOG_FILE"; then
+  log "Successfully pushed changes"
+else
+  log "ERROR: Failed to push changes (try running 'dotsync' manually to debug)"
+  exit 1
+fi
