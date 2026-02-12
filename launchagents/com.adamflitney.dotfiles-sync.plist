@@ -6,6 +6,9 @@
     <string>com.adamflitney.dotfiles-sync</string>
     <key>ProgramArguments</key>
     <array>
+        <string>/bin/bash</string>
+        <string>-l</string>
+        <string>-c</string>
         <string>/Users/adamflitney/.local/bin/dotfiles-sync</string>
     </array>
     <key>StartInterval</key>
