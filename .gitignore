@@ -1,0 +1,19 @@
+# Secrets
+*.pem
+*.key
+.env
+.env.*
+credentials*
+*_credentials*
+*.secret
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+
+# Local overrides (machine-specific configs)
+*.local
+
+# Logs
+*.log

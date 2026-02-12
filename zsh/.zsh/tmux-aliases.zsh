@@ -2,15 +2,9 @@
 # Tmux Project Management
 # ========================================
 
-export EDITOR='nvim'
 export TMUXINATOR_CONFIG="$HOME/.config/tmuxinator"
 
-# Add dotfiles scripts to PATH
-export PATH="$HOME/dotfiles/scripts:$PATH"
-
-# Aliases for tmux project management
-alias tm='$HOME/dotfiles/scripts/tm'
-alias tmn='$HOME/dotfiles/scripts/tmn'
+# Aliases (tm and tmn are in ~/.local/bin via PATH)
 alias tml='tmuxinator list'
 alias tms='tmux list-sessions'
 alias tma='tmux attach-session -t'
