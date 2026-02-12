@@ -17,25 +17,23 @@ fi
 mkdir -p ~/.config
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
-mkdir -p ~/.zsh
 
 # Remove existing configs that would conflict
 echo "==> Removing existing configs (if any)..."
 rm -rf ~/.config/nvim 2>/dev/null || true
 rm -f ~/.tmux.conf 2>/dev/null || true
-rm -rf ~/.config/tmuxinator 2>/dev/null || true
 rm -f ~/.zshrc 2>/dev/null || true
-rm -rf ~/.zsh 2>/dev/null || true
 rm -f ~/.config/starship.toml 2>/dev/null || true
+rm -rf ~/.config/sesh 2>/dev/null || true
 
 # Stow all packages
 echo "==> Stowing packages..."
 stow nvim
 stow tmux
-stow tmuxinator
 stow zsh
 stow scripts
 stow starship
+stow sesh
 
 echo "==> Setting up dotfiles auto-sync..."
 
@@ -57,15 +55,17 @@ echo ""
 echo "Packages installed:"
 echo "  - nvim       -> ~/.config/nvim"
 echo "  - tmux       -> ~/.tmux.conf"
-echo "  - tmuxinator -> ~/.config/tmuxinator"
-echo "  - zsh        -> ~/.zshrc, ~/.zsh/"
-echo "  - scripts    -> ~/.local/bin/tm, tmn, dotfiles-sync"
+echo "  - zsh        -> ~/.zshrc"
+echo "  - scripts    -> ~/.local/bin/dotfiles-sync"
 echo "  - starship   -> ~/.config/starship.toml"
+echo "  - sesh       -> ~/.config/sesh/config.yaml"
 echo ""
 echo "Auto-sync enabled (hourly). Check logs: tail ~/.local/share/dotfiles-sync.log"
 echo ""
 echo "Manual setup still required:"
 echo "  - Karabiner: ln -sf ~/dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json"
 echo "  - LeaderKey: ln -sf ~/dotfiles/leaderkey/config.json ~/Library/Application\\ Support/Leader\\ Key/config.json"
+echo "  - Go: brew install go"
+echo "  - Sesh: go install github.com/adamflitney/sesh@latest"
 echo ""
 echo "Restart your terminal or run: source ~/.zshrc"

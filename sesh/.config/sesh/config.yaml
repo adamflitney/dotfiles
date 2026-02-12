@@ -1,0 +1,12 @@
+# Sesh configuration
+# Auto-discovers git repositories and creates tmux sessions
+
+# Directories to scan for git repositories
+project_directories:
+  - ~/Dev
+  - ~/dotfiles
+
+# Session layout: creates 3 windows per project
+# Window 1: neovim
+# Window 2: opencode
+# Window 3: zsh (shell)

@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 # Environment
 # ========================================
 export EDITOR='nvim'
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 # ========================================
 # Aliases
@@ -35,9 +35,11 @@ alias dotl="tail -20 ~/.local/share/dotfiles-sync.log"
 alias dotsync="~/.local/bin/dotfiles-sync"
 
 # ========================================
-# Source modular configs
+# Tmux
 # ========================================
-[[ -f ~/.zsh/tmux-aliases.zsh ]] && source ~/.zsh/tmux-aliases.zsh
+alias tms='tmux list-sessions'
+alias tma='tmux attach-session -t'
+alias tmk='tmux kill-session -t'
 
 # ========================================
 # Starship prompt (must be at end)
