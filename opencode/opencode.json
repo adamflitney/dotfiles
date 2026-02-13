@@ -1,6 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "instructions": [],
+  "instructions": [
+    "When cloning git repositories, clone them to ~/dev/ unless the user specifies a different location."
+  ],
   "plugin": ["@tarquinen/opencode-dcp@latest"],
   "mcp": {
     "coto": {

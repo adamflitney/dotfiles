@@ -31,6 +31,9 @@ alias lp="export AWS_PROFILE=prod && aws sso login && echo \"Logged into \$(aws 
 alias zedit="nvim ~/.zshrc"
 alias zreload="source ~/.zshrc"
 
+# OpenCode
+alias oc="opencode"
+
 # Dotfiles management
 alias dots="git -C ~/dotfiles status"
 alias dotd="git -C ~/dotfiles diff"
