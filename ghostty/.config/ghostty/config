@@ -1,0 +1,17 @@
+# Ghostty Configuration
+# https://ghostty.org/docs/config
+
+# Enable shell integration for window titles
+# This allows tmux to set the window title via set-titles
+shell-integration-features = title
+
+# Font configuration (adjust to your preference)
+# font-family = "JetBrains Mono"
+# font-size = 14
+
+# Theme (uncomment to use)
+# theme = tokyonight
+
+# Window settings
+# window-decoration = false
+# macos-titlebar-style = hidden

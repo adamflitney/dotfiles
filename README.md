@@ -25,6 +25,8 @@ This will:
 | `scripts` | `~/.local/bin/` | Utility scripts (dotfiles-sync) |
 | `starship` | `~/.config/starship.toml` | Minimal Starship prompt configuration |
 | `sesh` | `~/.config/sesh/config.yaml` | Sesh configuration for tmux session management |
+| `ghostty` | `~/.config/ghostty/config` | Ghostty terminal configuration with title passthrough |
+| `raycast` | `~/dotfiles/raycast/scripts/` | Raycast script commands for project switching |
 
 ## Manual Installation
 
@@ -103,9 +105,22 @@ tail -f ~/.local/share/dotfiles-sync.log
 | Command | Description |
 |---------|-------------|
 | `sesh` | Fuzzy-find and start/attach to a project session |
+| `sesh list` | List all available projects |
+| `sesh list -t` | List only active tmux sessions |
+| `sesh connect <name>` | Connect directly to a project by name |
+| `sesh switch` | Quick switch between active sessions only |
 | `tms` | List active tmux sessions |
 | `tma <name>` | Attach to a tmux session |
 | `tmk <name>` | Kill a tmux session |
+
+### Tmux Keybindings for Sesh
+
+| Keybinding | Description |
+|------------|-------------|
+| `Ctrl+s Ctrl+j` | Open sesh project picker (popup) |
+| `Ctrl+s Ctrl+k` | Quick switch active sessions (popup) |
+| `Ctrl+s L` | Switch to last session |
+| `Ctrl+s T` | Fallback tmux tree view |
 
 ## Configs Overview
 

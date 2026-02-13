@@ -48,6 +48,11 @@ alias tma='tmux attach-session -t'
 alias tmk='tmux kill-session -t'
 
 # ========================================
+# Zoxide (smart cd with frecency)
+# ========================================
+eval "$(zoxide init zsh)"
+
+# ========================================
 # Starship prompt (must be at end)
 # ========================================
 eval "$(starship init zsh)"
