@@ -16,6 +16,9 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
+# fnm (Node.js version manager)
+eval "$(fnm env --use-on-cd)"
+
 # ========================================
 # Aliases
 # ========================================
