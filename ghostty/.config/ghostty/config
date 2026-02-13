@@ -5,6 +5,10 @@
 # This allows tmux to set the window title via set-titles
 shell-integration-features = title
 
+# Always start tmux - attach to existing session or create new one
+# This ensures there's always a tmux client for sesh to work with
+command = tmux new-session -A -s main
+
 # Font configuration (adjust to your preference)
 # font-family = "JetBrains Mono"
 # font-size = 14
@@ -15,3 +19,5 @@ shell-integration-features = title
 # Window settings
 # window-decoration = false
 # macos-titlebar-style = hidden
+window-height = 40
+window-width = 120
