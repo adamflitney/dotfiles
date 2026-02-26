@@ -56,3 +56,5 @@ eval "$(zoxide init zsh)"
 # Starship prompt (must be at end)
 # ========================================
 eval "$(starship init zsh)"
+mkalias() { echo "alias $1='${@:2}'" >> ~/.zshrc && source ~/.zshrc; }
+alias gs='git status'
