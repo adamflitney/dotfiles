@@ -1,0 +1,5 @@
+{
+    "name": "my-tasks",
+    "version": "1.0.0",
+    "description": "Skill for reading, creating, and updating personal tasks in the My Tasks Notion database."
+}

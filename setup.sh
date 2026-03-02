@@ -17,6 +17,7 @@ fi
 mkdir -p ~/.config
 mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
+mkdir -p ~/.claude
 
 # Remove existing configs that would conflict
 echo "==> Removing existing configs (if any)..."
@@ -25,6 +26,8 @@ rm -f ~/.tmux.conf 2>/dev/null || true
 rm -f ~/.zshrc 2>/dev/null || true
 rm -f ~/.config/starship.toml 2>/dev/null || true
 rm -rf ~/.config/sesh 2>/dev/null || true
+rm -f ~/.claude/settings.json 2>/dev/null || true
+rm -rf ~/.claude/commands 2>/dev/null || true
 
 # Stow all packages
 echo "==> Stowing packages..."
@@ -34,6 +37,15 @@ stow zsh
 stow scripts
 stow starship
 stow sesh
+stow claude
+
+# Install local Claude plugins
+echo "==> Installing local Claude plugins..."
+if command -v claude &> /dev/null; then
+  claude plugin install "$DOTFILES_DIR/claude-plugins/my-tasks" 2>/dev/null || true
+else
+  echo "  Claude CLI not found — skipping plugin install (run manually: claude plugin install ~/dotfiles/claude-plugins/my-tasks)"
+fi
 
 echo "==> Setting up dotfiles auto-sync..."
 
@@ -59,6 +71,7 @@ echo "  - zsh        -> ~/.zshrc"
 echo "  - scripts    -> ~/.local/bin/dotfiles-sync"
 echo "  - starship   -> ~/.config/starship.toml"
 echo "  - sesh       -> ~/.config/sesh/config.yaml"
+echo "  - claude     -> ~/.claude/settings.json, ~/.claude/commands/"
 echo ""
 echo "Auto-sync enabled (hourly). Check logs: tail ~/.local/share/dotfiles-sync.log"
 echo ""
@@ -67,5 +80,6 @@ echo "  - Karabiner: ln -sf ~/dotfiles/karabiner/karabiner.json ~/.config/karabi
 echo "  - LeaderKey: ln -sf ~/dotfiles/leaderkey/config.json ~/Library/Application\\ Support/Leader\\ Key/config.json"
 echo "  - Go: brew install go"
 echo "  - Sesh: go install github.com/adamflitney/sesh@latest"
+echo "  - Claude plugins: claude plugin install Notion (from claude-plugins-official marketplace)"
 echo ""
 echo "Restart your terminal or run: source ~/.zshrc"

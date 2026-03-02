@@ -1,0 +1,6 @@
+{
+  "enabledPlugins": {
+    "Notion@claude-plugins-official": true,
+    "my-tasks@local": true
+  }
+}

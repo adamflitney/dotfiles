@@ -27,6 +27,7 @@ This will:
 | `sesh` | `~/.config/sesh/config.yaml` | Sesh configuration for tmux session management |
 | `ghostty` | `~/.config/ghostty/config` | Ghostty terminal configuration with title passthrough |
 | `raycast` | `~/dotfiles/raycast/scripts/` | Raycast script commands for project switching |
+| `claude` | `~/.claude/` | Claude Code global settings and custom slash commands |
 
 ## Manual Installation
 
@@ -40,6 +41,7 @@ stow zsh       # Zsh configuration
 stow scripts   # dotfiles-sync script
 stow starship  # Starship prompt
 stow sesh      # Sesh config
+stow claude    # Claude Code settings
 ```
 
 ### Uninstall a Package
@@ -131,3 +133,4 @@ tail -f ~/.local/share/dotfiles-sync.log
 - **LeaderKey**: F12 leader key shortcuts for app launching (t=Ghostty, b=browsers, r=Raycast, n=Obsidian)
 - **Zsh**: Oh My Zsh with Starship prompt, AWS SSO aliases
 - **Starship**: Minimal prompt showing directory, git branch, and status
+- **Claude Code**: Global settings (enabled plugins) and custom `/tasks:list`, `/tasks:create`, `/tasks:update` slash commands. Local `my-tasks` plugin source lives in `claude-plugins/my-tasks/` and is installed via `claude plugin install`.
