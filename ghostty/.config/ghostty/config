@@ -5,10 +5,6 @@
 # This allows tmux to set the window title via set-titles
 shell-integration-features = title
 
-# Always start tmux with a unique session per window
-# Uses timestamp to ensure each Ghostty window gets its own tmux session
-command = /bin/sh -c '/opt/homebrew/bin/tmux new-session -s "ghostty-$(date +%s)"'
-
 # Font configuration (adjust to your preference)
 # font-family = "JetBrains Mono"
 # font-size = 14

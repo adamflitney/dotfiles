@@ -20,3 +20,6 @@ credentials*
 
 # Logs
 *.log
+
+# Shell config (contains tokens)
+zsh/
