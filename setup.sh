@@ -28,6 +28,7 @@ rm -f ~/.config/starship.toml 2>/dev/null || true
 rm -rf ~/.config/sesh 2>/dev/null || true
 rm -f ~/.claude/settings.json 2>/dev/null || true
 rm -rf ~/.claude/commands 2>/dev/null || true
+rm -rf ~/.claude/skills 2>/dev/null || true
 
 # Stow all packages
 echo "==> Stowing packages..."
@@ -71,7 +72,7 @@ echo "  - zsh        -> ~/.zshrc"
 echo "  - scripts    -> ~/.local/bin/dotfiles-sync"
 echo "  - starship   -> ~/.config/starship.toml"
 echo "  - sesh       -> ~/.config/sesh/config.yaml"
-echo "  - claude     -> ~/.claude/settings.json, ~/.claude/commands/"
+echo "  - claude     -> ~/.claude/settings.json, ~/.claude/commands/, ~/.claude/skills/"
 echo ""
 echo "Auto-sync enabled (hourly). Check logs: tail ~/.local/share/dotfiles-sync.log"
 echo ""
