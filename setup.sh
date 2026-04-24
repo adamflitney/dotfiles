@@ -44,8 +44,9 @@ stow claude
 echo "==> Installing local Claude plugins..."
 if command -v claude &> /dev/null; then
   claude plugin install "$DOTFILES_DIR/claude-plugins/my-tasks" 2>/dev/null || true
+  claude plugin install "$DOTFILES_DIR/claude-plugins/self-reflect" 2>/dev/null || true
 else
-  echo "  Claude CLI not found — skipping plugin install (run manually: claude plugin install ~/dotfiles/claude-plugins/my-tasks)"
+  echo "  Claude CLI not found — skipping plugin install (run manually: claude plugin install ~/dotfiles/claude-plugins/{my-tasks,self-reflect})"
 fi
 
 echo "==> Setting up dotfiles auto-sync..."
